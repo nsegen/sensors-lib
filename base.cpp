@@ -5,14 +5,14 @@ SensorBase::SensorBase()
   this -> state = 0;
 }
 
-unsigned int SensorBase::getState()
+unsigned short SensorBase::getState()
 {
   return this -> state;
 };
 
-void SensorBase::setState(unsigned int value)
+void SensorBase::setState(unsigned short value)
 {
-  this -> state = value;
+  this -> state = value % maxValue;
 };
 
-bool SensorBase::updateState() { return false; }
+void SensorBase::updateState() { }
